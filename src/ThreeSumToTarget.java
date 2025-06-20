@@ -1,10 +1,6 @@
-import java.io.BufferedReader;
-import java.io.Reader;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class ThreeSumToTarget {
     //Input: nums = [-1, 0, 1, 2, -1, -4], target = 0 Output: [[-1, -1, 2], [-1, 0, 1]]
     public static void main(String[] args) {
@@ -13,6 +9,16 @@ public class ThreeSumToTarget {
     * Given an array of integers and a target sum,
     * find all unique triplets that add up to the target.
     * Return the triplets as a List of List<Integer>.
+     */
+    /*
+     * Retro :
+     * What makes the solution I came up with different?  Is either better?
+     * My solution loops through the data 3 times.
+     * The online solution traverses the array from left and right,
+     * taking full advantage of the array sort to make intelligent decisions within the nested loop.
+     * This makes the online solution much better.
+     *
+     * My solution is O(n^3), the online solution in O(n^2)
      */
         Scanner targetScanner = new Scanner(System.in);
 
@@ -88,7 +94,7 @@ public class ThreeSumToTarget {
         return shorter;
     }
 
-    private static int[] sortIntArray(String[] arr) {
+    static int[] sortIntArray(String[] arr) {
         int[] numbers = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
